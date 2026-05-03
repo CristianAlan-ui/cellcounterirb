@@ -1,6 +1,18 @@
 import cv2
 import numpy as np
 def HoughLine(img, k, sigma, L, H):
+    """
+    Detects lines in an image using the Hough Transform after edge detection.
+    Parameters:
+        img (ndarray): Input image for line detection.
+        k (int): Kernel size for Gaussian blur (must be an odd number).
+        sigma (float): Standard deviation for Gaussian blur.
+        L (int): Lower threshold for Canny edge detection.
+        H (int): Upper threshold for Canny edge detection.
+
+    Returns:
+        line_img (ndarray): Image with detected lines drawn in green.
+    """
     blur = cv2.GaussianBlur(img, (k, k), sigma)
     edges_canny = cv2.Canny(blur,L,H) 
     line_img = img.copy()
@@ -20,6 +32,15 @@ def HoughLine(img, k, sigma, L, H):
     return line_img
 
 def HoughCircle(img):
+     """
+    Detects circles in an image using the Hough Circle Transform.
+
+    Parameters:
+        img (ndarray): Input image for circle detection (input in grey scale).
+
+    Returns:
+        circles_vis (ndarray): Image with detected circles and centers drawn.
+    """
     circles_vis = img.copy()
 
     circles = cv2.HoughCircles(
