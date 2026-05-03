@@ -1,17 +1,34 @@
-#Border detection
 import cv2
 from scipy import signal
 import numpy as np
 
 def Gradient(img, Hx):
-    dx = signal.convolve2d(img, Hx, mode='same')
+    """
+    Computes the gradient of an image using a kernel.
+    
+    Parameters:
+        img (ndarray): Input image.
+        Hx (ndarray): Kernel used for horizontal gradient (inverse is the vertical gradient).
 
+    Returns:
+        grad (ndarray): Gradient image.
+    """
+    dx = signal.convolve2d(img, Hx, mode='same')
     Hy = Hx.T
     dy = signal.convolve2d(img, Hy, mode='same')
     grad = np.sqrt(dx**2 + dy**2)
     return grad
 
 def Sobel(img):
+     """
+    Detects edges using the Sobel operator.
+
+    Parameters:
+        img (ndarray): Input image.
+
+    Returns:
+        sobel (ndarray): Sobel edge image
+    """
     kernel_sx = np.array([[-1, 0, 1],
                           [-2, 0, 2],
                           [-1, 0, 1]], dtype=np.float32)
@@ -27,6 +44,14 @@ def Sobel(img):
     return sobel
 
 def Prewitt(img):
+    """
+    Detects edges using the Prewitt operator.
+    Parameters:
+        img (ndarray): Input image.
+
+    Returns:
+        prewitt (ndarray): Prewitt edges image.
+    """
     kernel_px = np.array([[-1, 0, 1],
                           [-1, 0, 1],
                           [-1, 0, 1]], dtype=np.float32)
@@ -41,6 +66,15 @@ def Prewitt(img):
     return prewitt
 
 def Laplacian(img):
+    """
+    Detects edges using the Laplacian operator.
+    
+    Parameters:
+        img (ndarray): Input image.
+
+    Returns:
+        edges1 (ndarray): Edge map using Laplacian operator.
+    """
     laplace = np.array([[0, 1, 0],
                             [1,-4, 1],
                             [0, 1, 0]])
@@ -49,6 +83,14 @@ def Laplacian(img):
     return edges1
 
 def LaplacianD(img):
+    """
+    Detects edges using the diagonal Laplacian operator.
+    Parameters:
+        img (ndarray): Input image.
+
+    Returns:
+        edges2 (ndarray): Diagonal edges using diagonal Laplacian operator.
+    """
     laplace = np.array([[1, 1, 1],
                             [1,-8, 1],
                             [1, 1, 1]])
@@ -57,6 +99,19 @@ def LaplacianD(img):
     return edges2
     
 def Canny(img, k, sigma, L, H):
+    """
+    Detects edges using the Canny edge detection algorithm.
+
+    Parameters:
+        img (ndarray): Input image.
+        k (int): Kernel size for Gaussian blur (must be odd).
+        sigma (float): Standard deviation for Gaussian blur.
+        L (int): Lower threshold for edge tracking.
+        H (int): Upper threshold for edge tracking.
+
+    Returns:
+        edges_canny (ndarray): Binary edge map using canny.
+    """
     blur = cv2.GaussianBlur(img, (k, k), sigma)
     edges_canny = cv2.Canny(blur,L,H) 
     return edges_canny
