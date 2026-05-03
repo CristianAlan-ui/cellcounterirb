@@ -4,7 +4,7 @@ def HoughLine(img, k, sigma, L, H):
     """
     Detects lines in an image using the Hough Transform after edge detection.
     Parameters:
-        img (ndarray): Input image for line detection.
+        img (ndarray): Input image for line detection (input must be in grey scale).
         k (int): Kernel size for Gaussian blur (must be an odd number).
         sigma (float): Standard deviation for Gaussian blur.
         L (int): Lower threshold for Canny edge detection.
@@ -36,7 +36,7 @@ def HoughCircle(img):
     Detects circles in an image using the Hough Circle Transform.
 
     Parameters:
-        img (ndarray): Input image for circle detection (input in grey scale).
+        img (ndarray): Input image for circle detection (input must be in grey scale).
 
     Returns:
         circles_vis (ndarray): Image with detected circles and centers drawn.
