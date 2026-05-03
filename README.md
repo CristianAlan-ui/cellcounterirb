@@ -17,29 +17,29 @@ pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
 *CountCells
 ### Catalogo completo de funciones:
 
-* HarrisCorner
-* HarrisVis
-* Binary
-* Otsu
-* Average
-* Gaussian
-* Convolve
-* Gradient
-* Sobel
-* Prewitt
-* Laplacian
-* LaplacianD
-* Canny
-* GrayScale
-* Logarithmic
-* Contrast
-* HoughLine
-* HoughCircle
-* LowPass
-* HighPass
-* BandPass
-* BandStop
-* CountCells
+* `HarrisCorner`
+* `HarrisVis`
+* `Binary`
+* `Otsu`
+* `Average`
+* `Gaussian`
+* `Convolve`
+* `Gradient`
+* `Sobel`
+* `Prewitt`
+* `Laplacian`
+* `LaplacianD`
+* `Canny`
+* `GrayScale`
+* `Logarithmic`
+* `Contrast`
+* `HoughLine`
+* `HoughCircle`
+* `LowPass`
+* `HighPass`
+* `BandPass`
+* `BandStop`
+* `CountCells`
 * Nota: Consultar docstrings en cada funcion para documentacion interna.
 ### Ejemplo de uso de CountCells
 ```
@@ -52,6 +52,8 @@ img = cv2.imread('img.jpg')
 Hx = np.array([[-1, 0, 1],
                [-1, 0, 1],
                [-1, 0, 1]])
+#La funcion count regresa un entero con el conteo de celulas.
+#La funcion I regresa una imagen en blanco y negro con las celulas marcadas.
 count, I = cl.CountCells(img, Hx, 15, 30,1, 0.5,180,150)
 
 plt.figure(1)
