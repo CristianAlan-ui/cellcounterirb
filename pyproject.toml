@@ -16,8 +16,8 @@ dependencies = [
 
 authors = [
   {name = "Cristian Alan Flores Flores", email = "al349722@edu.uaa.mx"},
-  {name = "Angel Mauricio Cruz Dominguez"},
-  {name = "Jonathan Salvador De Lira Martinez"}
+  {name = "Angel Mauricio Cruz Dominguez", email = "al350584@edu.uaa.mx"},
+  {name = "Jonathan Salvador De Lira Martinez", email = "al351881@edu.uaa.mx"}
 ]
 
 readme = "README.md"
