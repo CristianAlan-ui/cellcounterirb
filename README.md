@@ -1,5 +1,5 @@
 # CellCounterIRB
-Libreria de procesamiento de imagenes y conteo de celulas
+Librería para el procesamiento de imágenes y conteo automático de células mediante técnicas de filtrado y análisis de bordes.
 
 ## Requisitos:
 * Tener instalado python
