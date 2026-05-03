@@ -1,7 +1,6 @@
 import numpy as np
 import cv2
 def LowPass(img, freq):
-    def HoughCircle(img):
     """
     Applies a low-pass filter in the frequency domain and converts the result
     back to the spatial domain.
@@ -12,6 +11,7 @@ def LowPass(img, freq):
     Returns:
         img_filt (ndarray): Filtered image in the spatial domain.
     """
+
     rows, cols = img.shape
     crow, ccol = rows//2,cols//2
     mask = np.zeros((rows,cols))
