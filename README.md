@@ -4,7 +4,7 @@ Libreria de procesamiento de imagenes y conteo de celulas
 ## Requisitos:
 * Tener instalado python
 * Tener instalado 'pip'
-* Tener instalado y agregado al path 'git'
+* Tener instalado git y tenerlo agregado al path 
 
 ## Proceso de instalación:
 * Abrir terminal
