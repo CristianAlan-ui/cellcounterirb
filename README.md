@@ -51,8 +51,6 @@ img = cv2.imread('img.jpg')
 Hx = np.array([[-1, 0, 1],
                [-1, 0, 1],
                [-1, 0, 1]])
-#La funcion count regresa un entero con el conteo de celulas.
-#La funcion I regresa una imagen en blanco y negro con las celulas marcadas.
 count, I = cl.CountCells(img, Hx, 15, 30,1, 0.5,180,150)
 
 plt.figure(1)
@@ -61,6 +59,8 @@ plt.subplot(2,1,1), plt.imshow(I, cmap = 'gray'), plt.title('Imagen con Conteo')
 plt.subplot(2,1,2), plt.imshow(img, cmap = 'gray'), plt.title('Imagen original')
 print(count)
 ```
+count: número de células detectadas
+I: imagen procesada con las células marcadas
 ## Notas
 
 * Es importante que la versión de Python utilizada para instalar la librería coincida con la del entorno donde se ejecutará.
