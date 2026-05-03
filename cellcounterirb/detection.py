@@ -31,27 +31,31 @@ def HoughLine(img, k, sigma, L, H):
             cv2.line(line_img, (x1, y1), (x2, y2), (0, 255, 0), 2)
     return line_img
 
-def HoughCircle(img):
-     """
+def HoughCircle(img, dp, minDist, param1, param2, minRadius, maxRadius):
+    """
     Detects circles in an image using the Hough Circle Transform.
-
     Parameters:
-        img (ndarray): Input image for circle detection (input must be in grey scale).
-
+        Parameters: img (ndarray): Input image for circle detection (input must be in grey scale).
+        dp (float): Inverse ratio of the accumulator resolution to image resolution.
+        minDist (int): Minimum distance between detected circle centers.
+        param1 (int): Higher threshold for the internal Canny edge detector.
+        param2 (int): Accumulator threshold for circle detection (sensitivity).
+        minRadius (int): Minimum circle radius to detect.
+        maxRadius (int): Maximum circle radius to detect.
     Returns:
-        circles_vis (ndarray): Image with detected circles and centers drawn.
+        Returns: circles_vis (ndarray): Image with detected circles and centers drawn.
     """
     circles_vis = img.copy()
 
     circles = cv2.HoughCircles(
         img,
         cv2.HOUGH_GRADIENT,
-        dp=1.2,
-        minDist=40,
-        param1=100,
-        param2=20,
-        minRadius=20,
-        maxRadius=90
+        dp,
+        minDist,
+        param1,
+        param2,
+        minRadius,
+        maxRadius
     )
 
     if circles is not None:
