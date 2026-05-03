@@ -12,7 +12,14 @@ Libreria de procesamiento de imagenes y conteo de celulas
 
 
 ## Uso
+###Funcion principal
+*CellCounter
+### Si se quiere ver el catalogo completo de funciones:
 
+```python
+import cellcounterirb
+dir(cellcounterirb)
+```
 
 
 
