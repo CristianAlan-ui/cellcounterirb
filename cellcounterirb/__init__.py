@@ -7,12 +7,13 @@ from .thresholding import Otsu
 from .space import Average
 from .space import Gaussian 
 from .space import Convolve
-from .space import Gradient
-from .space import Sobel
-from .space import Prewitt
-from .space import Laplacian
-from .space import LaplacianD
-from .space import Canny
+
+from .border import Gradient
+from .border import Sobel
+from .border import Prewitt
+from .border import Laplacian
+from .border import LaplacianD
+from .border import Canny
 
 from .gray import GrayScale
 
