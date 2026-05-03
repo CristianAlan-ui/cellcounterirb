@@ -60,7 +60,7 @@ plt.subplot(2,1,1), plt.imshow(I, cmap = 'gray'), plt.title('Counted image')
 plt.subplot(2,1,2), plt.imshow(img, cmap = 'gray'), plt.title('Original Image')
 print(count)
 ```
-count: number of detected cells
+count: number of detected cells  
 I: image with detected cells highlighted
 ## Notes
 * Make sure the version of the interpreter matches with the python where the environment where the library was installed.
