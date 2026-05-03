@@ -15,12 +15,32 @@ pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
 ## Uso
 ### Funcion principal
 *CountCells
-### Si se quiere ver el catalogo completo de funciones:
+### Catalogo completo de funciones:
 
-```python
-import cellcounterirb
-dir(cellcounterirb)
-```
+*HarrisCorner
+*HarrisVis
+*Binary
+*Otsu
+*Average
+*Gaussian
+*Convolve
+*Gradient
+*Sobel
+*Prewitt
+*Laplacian
+*LaplacianD
+*Canny
+*GrayScale
+*Logarithmic
+*Contrast
+*HoughLine
+*HoughCircle
+*LowPass
+*HighPass
+*BandPass
+*BandStop
+*CountCells
+Nota: Consultar docstrings para informacion de los argumentos
 ### Ejemplo de uso de CountCells
 ```
 import cv2
@@ -36,8 +56,8 @@ count, I = cl.CountCells(img, Hx, 15, 30,1, 0.5,180,150)
 
 plt.figure(1)
 plt.clf()
-plt.subplot(2,1,1), plt.imshow(I, cmap = 'grey'), plt.title('Imagen con Conteo')
-plt.subplot(2,1,2), plt.imshow(img, cmap = 'grey'), plt.title('Imagen original')
+plt.subplot(2,1,1), plt.imshow(I, cmap = 'gray'), plt.title('Imagen con Conteo')
+plt.subplot(2,1,2), plt.imshow(img, cmap = 'gray'), plt.title('Imagen original')
 print(count)
 ```
 ## Notas
