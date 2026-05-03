@@ -59,18 +59,18 @@ def Prewitt(img):
     return prewitt
 
 def Laplacian(img):
-    laplaciano1 = np.array([[0, 1, 0],
+    laplace = np.array([[0, 1, 0],
                             [1,-4, 1],
                             [0, 1, 0]])
-    edges1 = signal.convolve2d(img, laplaciano1, mode ='same')
+    edges1 = signal.convolve2d(img, laplace, mode ='same')
     edges1 = np.abs(edges1)
     return edges1
 
 def LaplacianD(img):
-    laplaciano2 = np.array([[1, 1, 1],
+    laplace = np.array([[1, 1, 1],
                             [1,-8, 1],
                             [1, 1, 1]])
-    edges2 = signal.convolve2d(img, laplaciano2, mode ='same')
+    edges2 = signal.convolve2d(img, laplace, mode ='same')
     edges2 = np.abs(edges2)
     return edges2
     
