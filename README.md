@@ -56,7 +56,7 @@ count, I = cl.CountCells(img, Hx, 15, 30,1, 0.5,180,150)
 
 plt.figure(1)
 plt.clf()
-plt.subplot(2,1,1), plt.imshow(I, cmap = 'gray'), plt.title('Imagen con Conteo')
+plt.subplot(2,1,1), plt.imshow(I, cmap = 'gray'), plt.title('Imagen con conteo')
 plt.subplot(2,1,2), plt.imshow(img, cmap = 'gray'), plt.title('Imagen original')
 print(count)
 ```
