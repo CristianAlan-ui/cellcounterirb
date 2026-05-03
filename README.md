@@ -13,7 +13,8 @@ pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
 ```
 
 ## Uso
-### Funcion principal
+
+### Función principal
 *`CountCells`
 ### Catalogo completo de funciones secundarias:
 
@@ -38,8 +39,8 @@ pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
 * `LowPass`
 * `HighPass`
 * `BandPass`
-* `BandStop`
-* Nota: Consultar docstrings en cada funcion para documentacion interna.
+* `BandStop`  
+Nota: Consultar docstrings en cada funcion para documentacion interna.  
 ### Ejemplo de uso de CountCells
 ```
 import cv2
@@ -59,7 +60,7 @@ plt.subplot(2,1,1), plt.imshow(I, cmap = 'gray'), plt.title('Imagen con Conteo')
 plt.subplot(2,1,2), plt.imshow(img, cmap = 'gray'), plt.title('Imagen original')
 print(count)
 ```
-count: número de células detectadas
+count: número de células detectadas   
 I: imagen procesada con las células marcadas
 ## Notas
 
