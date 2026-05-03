@@ -17,29 +17,29 @@ pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
 *CountCells
 ### Catalogo completo de funciones:
 
-*HarrisCorner
-*HarrisVis
-*Binary
-*Otsu
-*Average
-*Gaussian
-*Convolve
-*Gradient
-*Sobel
-*Prewitt
-*Laplacian
-*LaplacianD
-*Canny
-*GrayScale
-*Logarithmic
-*Contrast
-*HoughLine
-*HoughCircle
-*LowPass
-*HighPass
-*BandPass
-*BandStop
-*CountCells
+* HarrisCorner
+* HarrisVis
+* Binary
+* Otsu
+* Average
+* Gaussian
+* Convolve
+* Gradient
+* Sobel
+* Prewitt
+* Laplacian
+* LaplacianD
+* Canny
+* GrayScale
+* Logarithmic
+* Contrast
+* HoughLine
+* HoughCircle
+* LowPass
+* HighPass
+* BandPass
+* BandStop
+* CountCells
 Nota: Consultar docstrings para informacion de los argumentos
 ### Ejemplo de uso de CountCells
 ```
