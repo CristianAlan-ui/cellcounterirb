@@ -1,14 +1,14 @@
 # CellCounterIRB
 Libreria de procesamiento de imagenes y conteo de celulas
 
-##Requisitos:
-*Tener instalado python
-*Tener instalado 'pip'
-*Tener instalado y agregado al path 'git'
+## Requisitos:
+* Tener instalado python
+* Tener instalado 'pip'
+* Tener instalado y agregado al path 'git'
 
-##Proceso de instalación:
-*abrir terminal
-*pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
+## Proceso de instalación:
+* Abrir terminal
+* pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
 
 
 ## Uso
