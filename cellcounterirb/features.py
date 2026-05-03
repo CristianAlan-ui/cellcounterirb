@@ -25,7 +25,7 @@ def HarrisVis(img, blockSize, ksize, k):
     Detects and visualizes Harris corners on the input image.
 
     Parameters:
-        img (ndarray): Input image (must be grayscale).
+        img (ndarray): Input image (must be BGR).
         blockSize (int): Neighborhood size for corner detection.
         ksize (int): Aperture parameter of Sobel operator.
         k (float): Harris detector free parameter.
@@ -33,12 +33,18 @@ def HarrisVis(img, blockSize, ksize, k):
     Returns:
         harris_vis (ndarray): Image with detected corners highlighted in red.
     """
-    img_float = np.float32(img)
+    if len(img.shape) == 3:
+        img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    else:
+        img_gray = img
+
+    img_float = np.float32(img_gray)
 
     harris = cv2.cornerHarris(img_float, blockSize, ksize, k)
     harris = cv2.dilate(harris, None)
 
-    harris_vis = img.copy()
+    harris_vis = cv2.cvtColor(img_gray, cv2.COLOR_GRAY2BGR)
+
     harris_vis[harris > 0.01 * harris.max()] = [0, 0, 255]
 
     return harris_vis
