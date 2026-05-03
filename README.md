@@ -40,7 +40,7 @@ pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
 * BandPass
 * BandStop
 * CountCells
-Nota: Consultar docstrings para informacion de los argumentos
+* Nota: Consultar docstrings para informacion de los argumentos
 ### Ejemplo de uso de CountCells
 ```
 import cv2
