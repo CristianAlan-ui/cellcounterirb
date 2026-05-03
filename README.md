@@ -14,8 +14,8 @@ pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
 
 ## Uso
 ### Funcion principal
-*CountCells
-### Catalogo completo de funciones:
+*`CountCells`
+### Catalogo completo de funciones secundarias:
 
 * `HarrisCorner`
 * `HarrisVis`
@@ -39,7 +39,6 @@ pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
 * `HighPass`
 * `BandPass`
 * `BandStop`
-* `CountCells`
 * Nota: Consultar docstrings en cada funcion para documentacion interna.
 ### Ejemplo de uso de CountCells
 ```
