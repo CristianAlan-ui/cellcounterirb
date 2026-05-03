@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-def HarrisCorner(img,blockSize, ksize, k):
+def HarrisCorner(img, blockSize, ksize, k):
      """
     Detects the Harris corner response of an input image.
 
@@ -16,7 +16,7 @@ def HarrisCorner(img,blockSize, ksize, k):
     harris = cv2.cornerHarris(img_float, blockSize, ksize, k)
     harris = cv2.dilate(harris, None)
     return harris
-def HarrisVis(img):
+def HarrisVis(img, blockSize, ksize, k):
     """
     Detects and visualizes Harris corners on the input image.
     Parameters:
