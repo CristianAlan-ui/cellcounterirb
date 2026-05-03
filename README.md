@@ -14,14 +14,14 @@ pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
 
 ## Uso
 ### Funcion principal
-*CountingCells
+*CountCells
 ### Si se quiere ver el catalogo completo de funciones:
 
 ```python
 import cellcounterirb
 dir(cellcounterirb)
 ```
-### Ejemplo de uso de CountingCells
+### Ejemplo de uso de CountCells
 ```
 import cv2
 import numpy as np
