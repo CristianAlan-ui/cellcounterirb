@@ -3,8 +3,25 @@ import numpy as np
 from scipy import signal
 
 
-def CountCells(img, Hx, freq, dist, size, loga, umb, aa):
-
+def CountCells(img, Hx, freq, dist, size, loga, threshold, aa):
+    """
+    Cell detection and counting using image filtering and transformations
+    to remove noise and irrelevant structures.
+    
+    Parameters:
+        img (ndarray): Input image for cell counting.
+        Hx (ndarray): Gradient kernel used for edge detection (user-defined derivative type).
+        freq (int): Starting frequency for band-pass filtering.
+        dist (int): Bandwidth distance from the center frequency.
+        size (int): Kernel size for smoothing filter (use 1 if not applied).
+        loga (float): Parameter for logarithmic transformation.
+        threshold (int): Threshold value for binary segmentation (values > threshold → 255, else 0).
+        aa (int): Minimum area used to consider valid detected cells.
+    
+    Returns:
+        count (int): Number of detected cells.
+        result (ndarray): Binary image with detected cells marked.
+    """
     img= cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     dx = signal.convolve2d(img, Hx, mode='same')
 
@@ -33,14 +50,14 @@ def CountCells(img, Hx, freq, dist, size, loga, umb, aa):
     img = cv2.filter2D(img,-1,kp)
     
     
-    img = img.astype(np.float32) #agregado para trabajar en float
+    img = img.astype(np.float32)
     log_img = np.log(loga+img) 
     log_img = (log_img - log_img.min())/(log_img.max()-log_img.min())
     img = np.round(log_img*255).astype(np.uint8)
 
 
-    img[img >= umb] = 255
-    img[img <= umb] = 0
+    img[img >= threshold] = 255
+    img[img < threshold] = 0
 
 
     img = img-255
@@ -54,22 +71,22 @@ def CountCells(img, Hx, freq, dist, size, loga, umb, aa):
     blur = cv2.GaussianBlur(img, (5, 5), 0)
     
     
-    umbral, binaria = cv2.threshold(
+    umbral, binarys = cv2.threshold(
         blur, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
     
     
-    num_labels, labels, stats, centroids = cv2.connectedComponentsWithStats(binaria, 8)
+    num_labels, labels, stats, centroids = cv2.connectedComponentsWithStats(binarys, 8)
     
-    resultado = img.copy()
-    conteo = 0
+    result = img.copy()
+    count = 0
     
     for i in range(1, num_labels):   # 0 = fondo
         x, y, w, h, area = stats[i]
     
         # Filtrar regiones pequeñas para evitar ruido
         if area > aa:
-            conteo += 1
-            cv2.rectangle(resultado, (x, y), (x + w, y + h), (0, 0, 255), 2)
+            count += 1
+            cv2.rectangle(result, (x, y), (x + w, y + h), (0, 0, 255), 2)
 
     img = img + i
-    return conteo, resultado
+    return count, result
