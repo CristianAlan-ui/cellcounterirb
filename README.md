@@ -13,7 +13,7 @@ pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
 ```
 
 ## Uso
-###Funcion principal
+### Funcion principal
 *CellCounter
 ### Si se quiere ver el catalogo completo de funciones:
 
