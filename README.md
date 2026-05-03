@@ -14,16 +14,32 @@ pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
 
 ## Uso
 ### Funcion principal
-*CellCounter
+*CountingCells
 ### Si se quiere ver el catalogo completo de funciones:
 
 ```python
 import cellcounterirb
 dir(cellcounterirb)
 ```
+### Ejemplo de uso de CountingCells
+```
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+import cellcounterirb as cl
 
+img = cv2.imread('img.jpg')
+Hx = np.array([[-1, 0, 1],
+               [-1, 0, 1],
+               [-1, 0, 1]])
+count, I = cl.CountCells(img, Hx, 15, 30,1, 0.5,180,150)
 
-
+plt.figure(1)
+plt.clf()
+plt.subplot(2,1,1), plt.imshow(I, cmap = 'grey'), plt.title('Imagen con Conteo')
+plt.subplot(2,1,2), plt.imshow(img, cmap = 'grey'), plt.title('Imagen original')
+print(count)
+```
 ## Notas
 
 * Es importante que la versión de Python utilizada para instalar la librería coincida con la del entorno donde se ejecutará.
