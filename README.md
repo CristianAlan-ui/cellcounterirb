@@ -39,7 +39,7 @@ pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
 * `LowPass`
 * `HighPass`
 * `BandPass`
-* `BandStop`
+* `BandStop`  
 Note: each function has a docstring with internal documentation.
 ### CountCells usage example:
 ```
