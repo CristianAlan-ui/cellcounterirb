@@ -8,8 +8,9 @@ Libreria de procesamiento de imagenes y conteo de celulas
 
 ## Proceso de instalación:
 * Abrir terminal
-* pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
-
+```
+pip install git+https://github.com/CristianAlan-ui/cellcounterirb.git
+```
 
 ## Uso
 ###Funcion principal
