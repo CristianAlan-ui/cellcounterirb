@@ -4,8 +4,8 @@ def GrayScale(img, mode):
     Converts an input image into gray scale
     Parameters:
         mode (int): Image format mode.
-            - 1: RGB input image.
-            - 2: BGR input image.
+            1: RGB input image.
+            2: BGR input image.
     Returns:
         gray (ndarray): gray scale version of the image
     """
