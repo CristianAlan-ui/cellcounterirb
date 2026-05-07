@@ -87,6 +87,4 @@ def CountCells(img, Hx, freq, dist, size, loga, threshold, aa):
         if area > aa:
             count += 1
             cv2.rectangle(result, (x, y), (x + w, y + h), (0, 0, 255), 2)
-
-    img = img + i
     return count, result
